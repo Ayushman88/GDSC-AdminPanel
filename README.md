@@ -1,3 +1,6 @@
+# GDSC-AdminPanel
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -8,64 +11,43 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Runs the app in the development mode.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Instruction: Components
 
-### `npm test`
+### Auth
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Auth: A Firebase service for handling user authentication and authorization.
 
-### `npm run build`
+### Pages
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Home: The home page component displays the GDSC logo and an "Enter" button that triggers Google sign-in.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Leaderboard: The leaderboard page allows the admin to manage user points and functions. It includes a form for adding points and a dropdown for navigation.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- SignOut: Component for signing out the admin user.
 
-### `npm run eject`
+- Stocks: The stocks page allows the admin to manage product stocks. It includes a form for adding stocks and an image upload feature.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Components
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- AdminLoginButton: A component that handles Google sign-in authentication for the admin user.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- LeaderboardDropdown: A dropdown component for navigation within the leaderboard page.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- StockDropdown: A dropdown component for navigation within the stocks page.
 
-## Learn More
+- UploadImage: A component for uploading and cropping images.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Firebase Configuration
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- firebaseConfig.js: A file containing the Firebase configuration and initialization of the Firebase app with the necessary authentication and provider.
 
-### Code Splitting
+### Tailwind CSS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Tailwind CSS: A utility-first CSS framework for styling the application.
 
-### Analyzing the Bundle Size
+- tailwind.config.js: A configuration file that specifies the content and theme for the Tailwind setup.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+For detailed information on Tailwind CSS classes used in components, refer to the respective component files.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# GDSC-AdminPanel
