@@ -41,7 +41,7 @@ const AdminLoginButton = () => {
   return (
     <button
       onClick={signInWithGoogle}
-      className="w-[120px] h-[50px] border-4 border-t-red-500 border-r-[#2dff34de] border-b-[#ffea31e7] border-l-blue-500 text-black px-2 py-2 bg-transparent rounded-t-lg rounded-r-md rounded-b-sm rounded-l-xl absolute left-[720px] top-[150px] mt-[290px] hover:bg-gray-100"
+      className="w-[9vw] h-[4vw] border-4 border-t-red-500 border-r-[#2dff34de] border-b-[#ffea31e7] border-l-blue-500 text-black text-[1.2vw] font-poppins font-semibold rounded-lg transition hover:bg-white"
     >
       ENTER
     </button>
