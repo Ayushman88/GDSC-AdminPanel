@@ -17,16 +17,7 @@ const SignOut = () => {
       });
   };
 
-  return (
-    auth.currentUser && (
-      <button
-        className="text-black py-2 px-4 text-center hover:bg-gray-100"
-        onClick={handleSignOut}
-      >
-        Sign Out
-      </button>
-    )
-  );
+  return auth.currentUser && <button onClick={handleSignOut}>Sign Out</button>;
 };
 
 export default SignOut;

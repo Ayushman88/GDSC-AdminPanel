@@ -26,31 +26,28 @@ const LeaderboardDropdown = () => {
   };
 
   return (
-    <div className="relative">
-      <div className="text-[#000000] text-left font-['Poppins-SemiBold',_sans-serif] text-[40px] font-semibold absolute left-[1090px] top-[90px] w-[493px] h-[93px]">
-        Leaderboard{" "}
+    <div className="w-[17vw] h-auto">
+      <div className="w-[17vw] h-auto flex justify-between items-center text-black text-[2vw] font-semibold ">
+        <h1>Leaderboard</h1>
         <span onClick={toggleDropdown} className="cursor-pointer">
           <SlArrowDown />
         </span>
-        <br />
-        <span className="text-[#9d9d9d] text-[36px] leading[52.2px]">
-          2023-2024
-        </span>
       </div>
+      <span className="text-[#9d9d9d] text-[1.5vw] leading[52.2px]">
+        2023-2024
+      </span>
 
       {showDropdown && (
         <div
           ref={menuRef}
-          className="absolute left-[1290px] top-[120px] mt-2 bg-white border border-gray-300 p-4 rounded-md shadow-lg"
+          className="bg-white text-[1vw] border border-gray-300 p-4 rounded-md shadow-lg font-medium text-center"
         >
-          <Link
-            to="/stocks"
-            className="text-black block py-2 px-4 text-center hover:bg-gray-100"
-          >
+          <Link to="/stocks" className="block text-black hover:bg-gray-100">
             Stocks
           </Link>
-
-          <SignOut />
+          <div className="text-[#EA4335] hover:bg-gray-100 mt-2">
+            <SignOut />
+          </div>
         </div>
       )}
     </div>

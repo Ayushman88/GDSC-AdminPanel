@@ -1,61 +1,66 @@
 import React from "react";
 import LeaderboardDropdown from "./LeaderboardDropdown";
+import { useState } from "react";
 
 export const Leaderboard = ({ className, ...props }) => {
+  const [data, setData] = useState({
+    email: "",
+    points: "",
+  });
+  function handleOnChange(event) {
+    const { name, value } = event.target;
+    setData({ ...data, [name]: value });
+  }
+  function handleSubmit() {
+    console.log(data);
+  }
+
   return (
-    <div
-      className={`bg-[#ffffff] w-full  h-[1117px] relative overflow-hidden ${className}`}
-    >
-      <div
-        className="bg-[rgba(250,187,4,0.37)] rounded-[50%] w-[924px] h-[924px] absolute left-[-169px] top-[721px]"
-        style={{ filter: "blur(150px)" }}
-      ></div>
-      <div
-        className="bg-[rgba(15,157,87,0.30)] rounded-[50%] w-[1011px] h-[1011px] absolute left-[1394px] top-[442px]"
-        style={{ filter: "blur(150px)" }}
-      ></div>
-      <div className="text-[rgba(0,0,0,0.05)] text-left font-['Poppins-SemiBold',_sans-serif] text-[300px] font-semibold absolute left-[570px] top-[-50px] w-[1050px] h-[486px]">
-        GDSC{" "}
-      </div>
-      <div className="text-[#3771c8] text-left font-['Poppins-SemiBold',_sans-serif] text-[50px] font-semibold absolute left-[100px] top-[100px] w-[493px] h-[93px]">
-        Admin Panel{" "}
+    <div className={`w-[100vw] h-auto overflow-hidden ${className}`}>
+      <div className="bg-[rgba(250,187,4,0.37)] rounded-[50%] w-[40vw] h-[30vw] absolute left-[-10vw] bottom-[-10vw] -z-10 blur-3xl"></div>
+      <div className="bg-[rgba(15,157,87,0.30)] rounded-[50%] w-[40vw] h-[30vw] absolute right-[-10vw] bottom-[-10vw] -z-10 blur-3xl"></div>
+      <h1 className="text-[rgba(0,0,0,0.05)] font-poppins text-[20vw] font-bold absolute right-[5vw] top-[-4vw] -z-10">
+        GDSC
+      </h1>
+      <div className="w-[84vw] h-[15vw] ml-[7vw] mt-[6vw] text-[#3771c8] font-poppins font-semibold flex justify-between">
+        <h1 className="text-[3vw]">Admin Panel</h1>
+        <LeaderboardDropdown />
       </div>
 
-      <LeaderboardDropdown />
-
-      <div class="flex items-center justify-center h-screen">
-        <div className="box-border mt-[240px] w-[1300px] h-[500px] bg-blue-300 shadow-lg">
-          <div className="w-[376px] h-[64px] mt-10 ml-10 [font-family:'Poppins-Medium',Helvetica] font-medium text-black text-[35px]">
-            Email
+      {/* LeaderBoard */}
+      <div className=" flex flex-col justify-between p-10 bg-gradient-to-br from-blue-200 via-white to-blue-50 border-blue-200 border-4 w-[90%] h-[25rem] mx-auto rounded-3xl shadow-lg">
+        <div className="space-y-4  w-1/2">
+          <div className="flex flex-col gap-2">
+            <label className="font-semibold" htmlFor="email">
+              Email
+            </label>
             <input
-              id="input"
-              type="email"
-              className="w-[500px] h-[26px] px-3 py-2 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+              onChange={handleOnChange}
+              value={data.email}
+              className="rounded-lg py-1 px-2 shadow-md focus:outline-none"
+              type="text"
+              name="email"
             />
           </div>
-          <div className="w-[376px] h-[64px] mt-[70px] ml-10 [font-family:'Poppins-Medium',Helvetica] font-medium text-black text-[35px]">
-            Function
-            <select className="w-[500px] h-[46px] px-3 py-2 rounded-md border focus:outline-none focus:ring focus:border-blue-500">
-              <option value="" disabled selected>
-                ADD POINTS
-              </option>
-              <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option>
-              <option value="option3">Option 3</option>
-            </select>
-          </div>
-          <div className="w-[376px] h-[64px] mt-[60px] ml-10 [font-family:'Poppins-Medium',Helvetica] font-medium text-black text-[35px]">
-            Enter Points
+          <div className="flex flex-col gap-2">
+            <label className="font-semibold" htmlFor="points">
+              Points
+            </label>
             <input
-              id="input"
-              type="email"
-              className="w-[500px] h-[26px] px-3 py-2 rounded-md focus:outline-none focus:ring focus:border-blue-500"
+              onChange={handleOnChange}
+              value={data.points}
+              className="rounded-lg py-1 px-2 shadow-md focus:outline-none"
+              type="text"
+              name="points"
             />
           </div>
-          <button className="w-[150px] h-[46px] ml-[1000px] mt-[60px] border-2 border-black bg-transparent text-black px-4 py-2 rounded-[20px] hover:bg-black hover:text-white transition duration-300 ease-in-out">
-            submit
-          </button>
         </div>
+        <button
+          onClick={handleSubmit}
+          className="px-8 py-2 text-[#3771C8] rounded-md border border-[#3771C8] w-fit ml-auto hover:text-white hover:bg-[#3771c8] transition duration-150"
+        >
+          Submit
+        </button>
       </div>
     </div>
   );

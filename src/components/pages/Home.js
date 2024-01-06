@@ -12,8 +12,7 @@ export const Home = ({ className, ...props }) => {
       <div className="absolute top-[-10vw] right-[-10vw] w-[40vw] h-[40vw] rounded-[50%] bg-[#0f9d5671] blur-3xl -z-10"></div>
       <div className="absolute bottom-[-10vw] left-[-10vw] w-[40vw] h-[40vw] rounded-[50%] bg-[#FABB045E] blur-3xl -z-10"></div>
       <div></div>
-
-
+      
       <h1 className="text-[#3771c8] font-poppins font-semibold text-[5vw] text-center">
         Admin Panel
       </h1>
