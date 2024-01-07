@@ -42,9 +42,12 @@ const LeaderboardDropdown = () => {
           ref={menuRef}
           className="bg-white text-[1vw] border border-gray-300 p-4 rounded-md shadow-lg font-medium text-center"
         >
-          <Link to="/stocks" className="block text-black hover:bg-gray-100">
+          <div className="block text-black hover:bg-gray-100">
+            LeaderBoard
+          </div>
+          <div className="block text-black hover:bg-gray-100 mt-2">
             Stocks
-          </Link>
+          </div>
           <div className="text-[#EA4335] hover:bg-gray-100 mt-2">
             <SignOut />
           </div>

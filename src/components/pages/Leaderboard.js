@@ -29,7 +29,7 @@ export const Leaderboard = ({ className, ...props }) => {
       </div>
 
       {/* LeaderBoard */}
-      <div className=" flex flex-col justify-between p-10 bg-gradient-to-br from-blue-200 via-white to-blue-50 border-blue-200 border-4 w-[90%] h-[25rem] mb-5 mx-auto rounded-3xl shadow-lg">
+      <div className=" flex flex-col justify-between p-10 bg-gradient-to-br from-blue-200 via-white to-blue-50 border-blue-200 border-4 w-[90%] h-[33vw] mb-5 mx-auto rounded-3xl shadow-lg">
         <div className="space-y-4  w-1/2">
           <div className="flex flex-col gap-2">
             <label className="font-semibold ml-2" htmlFor="email">
@@ -65,7 +65,7 @@ export const Leaderboard = ({ className, ...props }) => {
       </div>
 
       {/* Stocks */}
-      <div className=" flex justify-between items-center p-10 bg-gradient-to-br from-red-300 via-white to-red-50 border-red-200 border-4 w-[90%] h-[25rem] mb-5 mx-auto rounded-3xl shadow-lg">
+      <div className=" flex justify-between items-center p-10 bg-gradient-to-br from-red-300 via-white to-red-50 border-red-200 border-4 w-[90%] h-[33vw] mb-5 mx-auto rounded-3xl shadow-lg">
         <div className="space-y-4  w-1/2">
           <div className="flex flex-col gap-2">
             <label className="font-semibold ml-2" htmlFor="email">
