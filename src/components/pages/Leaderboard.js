@@ -24,14 +24,16 @@ export const Leaderboard = ({ className, ...props }) => {
     } else {
       if (name != "img") {
         setStocksData({ ...stocksData, [name]: value });
-      } else {
+      }else{
         setStocksData({ ...stocksData, [name]: files[0] });
       }
     }
   }
   function handleSubmit() {
-    if (pageState == 0) console.log(leaderboardData);
-    else console.log(stocksData);
+    if(pageState==0)
+    console.log(leaderboardData);
+  else
+  console.log(stocksData)
   }
   useEffect(() => {
     console.log(stocksData);

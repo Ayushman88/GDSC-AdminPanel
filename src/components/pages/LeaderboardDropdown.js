@@ -28,7 +28,7 @@ const LeaderboardDropdown = ({setPageState, pageState}) => {
   return (
     <div className="w-[17vw] h-auto">
       <div className="w-[17vw] h-auto flex justify-between items-center text-black text-[2vw] font-semibold ">
-        <h1>{pageState==0?'Leaderboard':'Stocks'}</h1>
+        <h1>{pageState==0?"Leaderboard":"Stocks"}</h1>
         <span onClick={toggleDropdown} className="cursor-pointer">
           <SlArrowDown />
         </span>
