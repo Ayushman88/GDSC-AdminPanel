@@ -33,7 +33,7 @@ const UploadImage = () => {
 
   return (
     <div>
-      <input type="file" accept="image/*" onChange={handleImageChange} />
+      <input type="file" accept="image/*" className="text-[1vw] bg-white" onChange={handleImageChange} />
       {croppedImage && (
         <img src={croppedImage} alt="Cropped" style={{ width: "100%" }} />
       )}
