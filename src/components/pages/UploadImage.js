@@ -1,42 +1,31 @@
-import React, { useState, useEffect, useCallback } from "react";
-import Resizer from "react-image-file-resizer";
+import React, { useState, useEffect } from "react";
 
-const UploadImage = () => {
-  const [image, setImage] = useState(null);
-  const [croppedImage, setCroppedImage] = useState(null);
+const UploadImage = ({ img, handleOnChange }) => {
+  const [previewImage, setPreviewImage] = useState(null);
 
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    setImage(file);
-  };
+  function handleImageChange(e) {
+    const selectedFile = e.target.files[0];
 
-  const handleImageResize = useCallback(() => {
-    if (image) {
-      Resizer.imageFileResizer(
-        image,
-        300,
-        300,
-        "JPEG",
-        100,
-        0,
-        (uri) => {
-          setCroppedImage(uri);
-        },
-        "base64"
-      );
+    // Preview the selected image
+    if (selectedFile) {
+      const imageUrl = URL.createObjectURL(selectedFile);
+      setPreviewImage(imageUrl);
     }
-  }, [image]);
-
-  useEffect(() => {
-    handleImageResize();
-  }, [handleImageResize]);
+  }
 
   return (
-    <div>
-      <input type="file" accept="image/*" className="text-[1vw] bg-white" onChange={handleImageChange} />
-      {croppedImage && (
-        <img src={croppedImage} alt="Cropped" style={{ width: "100%" }} />
-      )}
+    <div className="h-full flex flex-col gap-y-3">
+      <input
+        type="file"
+        accept="image/*"
+        name="img"
+        className="text-[1vw] bg-white"
+        onChange={(e) => {
+          handleImageChange(e);
+          handleOnChange(e);
+        }}
+      />
+      { previewImage && <img src={previewImage} alt="img" className="w-[10rem] mx-auto rounded-md object-cover" />}
     </div>
   );
 };

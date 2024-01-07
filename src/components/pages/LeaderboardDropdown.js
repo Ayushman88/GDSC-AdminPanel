@@ -3,7 +3,7 @@ import SignOut from "./SignOut";
 import { Link } from "react-router-dom";
 import { SlArrowDown } from "react-icons/sl";
 
-const LeaderboardDropdown = () => {
+const LeaderboardDropdown = ({setPageState, pageState}) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const menuRef = useRef(null);
 
@@ -42,10 +42,10 @@ const LeaderboardDropdown = () => {
           ref={menuRef}
           className="bg-white text-[1vw] border border-gray-300 p-4 rounded-md shadow-lg font-medium text-center"
         >
-          <div className="block text-black hover:bg-gray-100">
+          <div onClick={()=>setPageState(0)} className="block text-black hover:bg-gray-100">
             LeaderBoard
           </div>
-          <div className="block text-black hover:bg-gray-100 mt-2">
+          <div onClick={()=>setPageState(1)} className="block text-black hover:bg-gray-100 mt-2">
             Stocks
           </div>
           <div className="text-[#EA4335] hover:bg-gray-100 mt-2">
