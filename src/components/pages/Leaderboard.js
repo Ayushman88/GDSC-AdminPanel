@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import LeaderboardDropdown from "./LeaderboardDropdown";
 import { useState } from "react";
 import UploadImage from "./UploadImage";
+import Popup from "./Popup";
 
 export const Leaderboard = ({ className, ...props }) => {
   const [leaderboardData, setLeaderboardData] = useState({
@@ -36,6 +37,16 @@ export const Leaderboard = ({ className, ...props }) => {
     console.log(stocksData);
   }, [stocksData]);
 
+  const [showPopup, setShowPopup] = useState(false);
+
+  const togglePopup = () => {
+    setShowPopup(!showPopup);
+  };
+
+  const closePopup = (e) => {
+    setShowPopup(false);
+  };
+
   return (
     <div className={`w-[100vw] h-auto overflow-hidden ${className}`}>
       <div className="bg-[rgba(250,187,4,0.37)] rounded-[50%] w-[40vw] h-[30vw] absolute left-[-10vw] bottom-[-10vw] -z-10 blur-3xl"></div>
@@ -50,6 +61,12 @@ export const Leaderboard = ({ className, ...props }) => {
           pageState={pageState}
         />
       </div>
+      <Popup
+        isOpen={showPopup}
+        closePopup={closePopup}
+        title="Popup Title"
+        content="This is the content of the popup."
+      />
 
       {pageState == 0 ? (
         /* LeaderBoard */
@@ -144,7 +161,7 @@ export const Leaderboard = ({ className, ...props }) => {
               </div>
             </div>
             <button
-              onClick={handleSubmit}
+              onClick={togglePopup}
               className="px-8 py-2 text-[#EA4335] rounded-md border border-[#EA4335] text-[1vw] font-medium h-fit w-fit ml-auto hover:text-white hover:bg-[#EA4335] transition duration-150"
             >
               Submit

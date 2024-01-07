@@ -28,7 +28,7 @@ const LeaderboardDropdown = ({setPageState, pageState}) => {
   return (
     <div className="w-[17vw] h-auto">
       <div className="w-[17vw] h-auto flex justify-between items-center text-black text-[2vw] font-semibold ">
-        <h1>Leaderboard</h1>
+        <h1>{pageState==0?'Leaderboard':'Stocks'}</h1>
         <span onClick={toggleDropdown} className="cursor-pointer">
           <SlArrowDown />
         </span>
@@ -42,13 +42,13 @@ const LeaderboardDropdown = ({setPageState, pageState}) => {
           ref={menuRef}
           className="bg-white text-[1vw] border border-gray-300 p-4 rounded-md shadow-lg font-medium text-center"
         >
-          <div onClick={()=>setPageState(0)} className="block text-black hover:bg-gray-100">
+          <div onClick={()=>setPageState(0)} className="block text-black hover:bg-gray-100 hover:cursor-pointer">
             LeaderBoard
           </div>
-          <div onClick={()=>setPageState(1)} className="block text-black hover:bg-gray-100 mt-2">
+          <div onClick={()=>setPageState(1)} className="block text-black hover:bg-gray-100 mt-2 hover:cursor-pointer">
             Stocks
           </div>
-          <div className="text-[#EA4335] hover:bg-gray-100 mt-2">
+          <div className="text-[#EA4335] hover:bg-gray-100 mt-2 hover:cursor-pointer">
             <SignOut />
           </div>
         </div>
